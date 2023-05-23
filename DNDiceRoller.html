@@ -1,65 +1,100 @@
 <html>
-    <head>
-        <title> 
-            DNDiceRoller
-        </title>
-        <style>
-            div{
-                display: flex;
-                background-color:#f4f4f7;
-                align-items:center;
-                flex-direction: column;
-            }
-            #die{
-                border: 5px solid black;
-                margin: 10px;
-                font-size: 100;
-                width: 200px;
-                height: 200px;
-                justify-content: center;
-                cursor: pointer;
-                
-            
-            }
-            
-            #die:hover{
-                box-shadow: 5px 3px grey;
-            
-            }
-            span{
-                align-self: center;
-            
-            }
-            #dieMax{
-                border: 1px solid black;
-                width: 100px;
-                height: 30px;
-                text-align: center;
 
-            }
-        </style>
-    </head>
-    <body>
+<head>
+    <title>
+        DNDiceRoller
+    </title>
+    <style>
+        div {
+            display: flex;
+            background-color: #f4f4f7;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-        <div>
-            </div>
-            <input type="text" id="dieMax"/>
-            <div id="die" >
-                <span id="dieNum">
-                    1
-                </span>
+        #die {
+            border: 5px solid black;
+            margin: 10px;
+            font-size: 100;
+            width: 200px;
+            height: 200px;
+            justify-content: center;
+            cursor: pointer;
+
+
+        }
+
+        #die:hover {
+            box-shadow: 5px 3px grey;
+
+        }
+
+        span {
+            align-self: center;
+
+        }
+
+        #dieMax {
+            border: 1px solid black;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            justify-self: center;
+        }
+
+        #dieType {
+            border: solid black 1px;
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            justify-self: center;
+            font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+
+        <input type="text" id="dieMax" />
+        <div id="die">
+            <span id="dieNum">
+                1
+            </span>
+
         </div>
-        <script>
-            document.querySelector("#die").addEventListener("click", roller)
-            function roller() {
-                let dieMax = document.querySelector("#dieMax").value
-                console.log(dieMax)
-                if(isNaN(dieMax)){return}
-                let dieNum = Math.random() *dieMax + 1
-                document.querySelector("#dieNum").textContent = parseInt(dieNum)
-            }
-            
-        </script>
-    </body>
+    </div>
+    <div>
+        <label for="dieType">Die Type:</label>
+
+        <select name="dies" id="dieType">
+            <option value="-Select-">-Select-</option>
+            <option value="D4">D4</option>
+            <option value="D6">D6</option>
+            <option value="D8">D8</option>
+            <option value="D10">D10</option>
+            <option value="D12">D12</option>
+            <option value="D20">D20</option>
+            <option value="D100">D100</option>
+        </select>
+
+
+    </div>
+    </div>
+    <script>
+        document.querySelector("#die").addEventListener("click", roller)
+        function roller() {
+            let dieMax = document.querySelector("#dieMax").value
+            console.log(dieMax)
+            if (isNaN(dieMax)) { return }
+            let dieNum = Math.random() * dieMax + 1
+            document.querySelector("#dieNum").textContent = parseInt(dieNum)
+        }
+        const dropdown = document.querySelector("dieType");
+        dropdown.addEventListener("change", dieMax = 4)
+    </script>
+</body>
 
 </html>
