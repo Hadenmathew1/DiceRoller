@@ -1,0 +1,53 @@
+div {
+    display: flex;
+    background-color: #f4f4f7;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 50px;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.die {
+    border: 5px solid black;
+    margin: 10px;
+    font-size: 100;
+    width: 200px;
+    height: 200px;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+#die:hover {
+    box-shadow: 5px 3px grey;
+}
+
+span {
+    align-self: center;
+}
+
+#dieAmt {
+    border: 1px solid black;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    justify-self: center;
+}
+
+#dieType {
+    border: solid black 1px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    justify-self: center;
+    font-size: x-large;
+}
