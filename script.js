@@ -1,4 +1,4 @@
-document.querySelector(".die").addEventListener("click", roller)
+document.querySelector("#roll").addEventListener("click", roller)
 document.addEventListener("change")
 let dieType = null
 function roller() {
